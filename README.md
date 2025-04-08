@@ -1,6 +1,6 @@
 # TicTacToe-React
 
-Tic Tac Toe game with React.js
+Tic Tac Toe game with React
 
 ## Installation
 
