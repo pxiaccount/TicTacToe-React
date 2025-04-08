@@ -1,5 +1,30 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
   color: black;
+  font-family: Inter;
+}
+
+.box {
+  transition: all 0.2s ease-in-out;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  background-color: rgb(243 244 246);
+}
+
+.winner-text {
+  animation: fade 0.5s ease-in;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }

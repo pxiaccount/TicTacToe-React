@@ -40,25 +40,35 @@ function App() {
     }
   }
 
+  const restart = () => {
+    setBoxArr(Array(9).fill(''))
+    setWinner(null)
+    setMatch(false)
+  }
+
   return (
     <>
-      {winner && <div className="winner">Player {winner} wins!</div>}
-      <div className='flex'>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(0)}>{boxArr[0]}</div>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(1)}>{boxArr[1]}</div>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(2)}>{boxArr[2]}</div>
+      <div className='min-h-screen flex flex-col items-center justify-center gap-4'>
+        {winner && <div className="text-2xl font-bold winner-text">Player {winner} wins!</div>}
+        <div className='flex flex-col gap-1'>
+          <div className='flex gap-1'>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(0)}>{boxArr[0]}</div>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(1)}>{boxArr[1]}</div>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(2)}>{boxArr[2]}</div>
+          </div>
+          <div className='flex gap-1'>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(3)}>{boxArr[3]}</div>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(4)}>{boxArr[4]}</div>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(5)}>{boxArr[5]}</div>
+          </div>
+          <div className='flex gap-1'>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(6)}>{boxArr[6]}</div>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(7)}>{boxArr[7]}</div>
+            <div className="box w-20 h-20 border-2 border-black flex items-center justify-center text-2xl" onClick={() => handleBox(8)}>{boxArr[8]}</div>
+          </div>
+        </div>
+        <button className='px-4 py-2 bg-sky-500 text-white rounded-full hover:bg-sky-600' onClick={() => restart()}>Restart</button>
       </div>
-      <div className='flex'>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(3)}>{boxArr[3]}</div>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(4)}>{boxArr[4]}</div>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(5)}>{boxArr[5]}</div>
-      </div>
-      <div className='flex'>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(6)}>{boxArr[6]}</div>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(7)}>{boxArr[7]}</div>
-        <div className="box w-15 h-15 border-1 border-solid border-black" onClick={() => handleBox(8)}>{boxArr[8]}</div>
-      </div>
-      <button className='p-1 bg-sky-500 rounded-3xl ' onClick={() => setBoxArr(Array(9).fill(''))}>Restart</button>
     </>
   )
 }
